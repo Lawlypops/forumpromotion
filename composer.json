@@ -1,0 +1,22 @@
+{
+	"name": "lawlypops/forumpromotion",
+	"type": "phpbb-extension",
+	"description": "Creates a virtual cash or points system on a board.",
+	"homepage": "",
+	"version": "1.0.0",
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "LawlyPops"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3"
+	},
+	"extra": {
+		"display-name": "Forum Promotion: Virtual Cash Extension",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.1.0"
+		}
+	}
+}

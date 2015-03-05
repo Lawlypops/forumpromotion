@@ -1,0 +1,101 @@
+imports:
+    - { resource: tables.yml }
+    - { resource: notifications.yml }
+
+services:
+    #############
+    # Listeners #
+    #############
+
+    lawlypops.forumpromotion.acp_listener:
+        class: lawlypops\forumpromotion\event\acp_listener
+        arguments:
+            - @request
+            - @template
+        tags:
+            - { name: event.listener }
+
+    lawlypops.forumpromotion.main_listener:
+        class: lawlypops\forumpromotion\event\main_listener
+        arguments:
+            - @config
+            - @dbal.conn
+            - @request
+            - @template
+            - @user
+            - @lawlypops.forumpromotion.core.manager
+        tags:
+            - { name: event.listener }
+
+    lawlypops.forumpromotion.submit_post_listener:
+        class: lawlypops\forumpromotion\event\submit_post_listener
+        arguments:
+            - @auth
+            - @config
+            - @dbal.conn
+            - @user
+        tags:
+            - { name: event.listener }
+
+    lawlypops.forumpromotion.memberlist_listener:
+        class: lawlypops\forumpromotion\event\memberlist_listener
+        arguments:
+            - @auth
+            - @config
+            - @controller.helper 
+            - %core.root_path%
+            - %core.php_ext%
+        tags:
+            - { name: event.listener }
+
+    lawlypops.forumpromotion.viewtopic_listener:
+        class: lawlypops\forumpromotion\event\viewtopic_listener
+        arguments:
+            - @auth
+            - @config
+            - @dbal.conn
+            - @controller.helper
+            - @template
+            - @user
+            - %core.root_path%
+            - %core.php_ext%
+        tags:
+            - { name: event.listener }
+
+    ###############
+    # Controllers #
+    ###############
+
+    lawlypops.forumpromotion.donate.controller:
+        class: lawlypops\forumpromotion\controller\donate_controller
+        arguments:
+            - @auth
+            - @config
+            - @dbal.conn
+            - @controller.helper
+            - @notification_manager
+            - @request
+            - @symfony_request
+            - @template
+            - @user
+            - @lawlypops.forumpromotion.core.manager
+            - %tables.forumpro_log%
+            - %tables.forumpro_log_types%
+
+    ##############
+    # Core Tools # 
+    ##############
+
+    lawlypops.forumpromotion.core.manager:
+        class: lawlypops\forumpromotion\core\forumpromotion_manager
+        arguments:
+            - @auth
+            - @config
+            - @dbal.conn
+            - @log
+            - @pagination
+            - @request
+            - @template
+            - @user
+            - %tables.forumpro_log%
+            - %tables.forumpro_log_types%

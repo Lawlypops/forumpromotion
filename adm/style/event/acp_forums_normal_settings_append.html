@@ -1,0 +1,53 @@
+<dl>
+	<dt><label for="crml_enabled">{L_CRML_ENABLE_FORUM}</label></dt>
+	<dd>
+		<label><input type="radio" class="radio" name="crml_enabled" value="1"<!-- IF S_FORUMPROMOTION_ENABLED_FORUM eq 1 --> id="crml_enabled" checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+		<label><input type="radio" class="radio" name="crml_enabled" value="0"<!-- IF not S_FORUMPROMOTION_ENABLED_FORUM --> id="crml_enabled" checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+	</dd>
+</dl>
+<dl>
+	<dt>
+		<label for="crml_unit">{L_CRML_FORUM_TOPIC_INCREMENT}</label>
+		<br /><span>{L_CRML_FORUM_TOPIC_INCREMENT_EXPLAIN}</span>
+	</dt>
+	<dd>
+		<label><input type="radio" class="radio" name="crml_topic_default" value="1"<!-- IF S_CRML_TOPIC_DEFAULT --> id="crml_topic_default" checked="checked"<!-- ENDIF --> onclick="hideBox('crml_topic_incr')" /> {L_YES}</label>
+		<label><input type="radio" class="radio" name="crml_topic_default" value="0"<!-- IF not S_CRML_TOPIC_DEFAULT --> id="crml_topic_default" checked="checked"<!-- ENDIF --> onclick="showBox('crml_topic_incr')" /> {L_NO}</label>
+		<br />
+		<input id="crml_topic_incr" type="text" size="10" maxlength="30" name="crml_topic_incr" value="{S_CRML_TOPIC_INCR}"<!-- IF S_CRML_TOPIC_DEFAULT --> style="display: none;"<!-- ENDIF --> />
+	</dd>
+</dl>
+<dl>
+	<dt>
+		<label for="crml_unit">{L_CRML_FORUM_REPLY_INCREMENT}</label>
+		<br /><span>{L_CRML_FORUM_REPLY_INCREMENT_EXPLAIN}</span>
+	</dt>
+	<dd>
+		<label><input type="radio" class="radio" name="crml_reply_default" value="1"<!-- IF S_CRML_REPLY_DEFAULT eq 1 --> id="crml_reply_default" checked="checked"<!-- ENDIF --> onclick="hideBox('crml_reply_incr')" /> {L_YES}</label>
+		<label><input type="radio" class="radio" name="crml_reply_default" value="0"<!-- IF not S_CRML_REPLY_DEFAULT --> id="crml_reply_default" checked="checked"<!-- ENDIF --> onclick="showBox('crml_reply_incr')" /> {L_NO}</label>
+		<br />
+		<input id="crml_reply_incr" type="text" size="10" maxlength="30" name="crml_reply_incr" value="{S_CRML_REPLY_INCR}"<!-- IF S_CRML_REPLY_DEFAULT --> style="display: none;"<!-- ENDIF --> />
+	</dd>
+</dl>
+<dl>
+	<dt>
+		<label for="crml_unit">{L_CRML_FORUM_PER_WORD_INCREMENT}</label>
+		<br /><span>{L_CRML_FORUM_PER_WORD_INCREMENT_EXPLAIN}</span>
+	</dt>
+	<dd>
+		<label><input type="radio" class="radio" name="crml_per_word_default" value="1"<!-- IF S_CRML_PER_WORD_DEFAULT eq 1 --> id="crml_per_word_default" checked="checked"<!-- ENDIF --> onclick="hideBox('crml_per_word_incr')" /> {L_YES}</label>
+		<label><input type="radio" class="radio" name="crml_per_word_default" value="0"<!-- IF not S_CRML_PER_WORD_DEFAULT --> id="crml_per_word_default" checked="checked"<!-- ENDIF --> onclick="showBox('crml_per_word_incr')" /> {L_NO}</label>
+		<br />
+		<input id="crml_per_word_incr" type="text" size="10" maxlength="30" name="crml_per_word_incr" value="{S_CRML_PER_WORD_INCR}"<!-- IF S_CRML_PER_WORD_DEFAULT --> style="display: none;"<!-- ENDIF --> />
+	</dd>
+</dl>
+
+<script type="text/javascript">
+	function hideBox(boxId) {
+		$("#" + boxId).hide();
+	}
+
+	function showBox(boxId) {
+		$("#" + boxId).show();
+	}
+</script>

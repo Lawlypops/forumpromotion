@@ -1,0 +1,6 @@
+# To be included in services.yml.
+
+parameters:
+    tables.forumpro_log: %core.table_prefix%forumpro_log
+    tables.forumpro_log_types: %core.table_prefix%forumpro_log_types
+    tables.forumpro_tips: %core.table_prefix%forumpro_tips

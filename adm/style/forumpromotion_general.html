@@ -1,0 +1,116 @@
+<!-- INCLUDE overall_header.html -->
+
+<a id="maincontent"></a>
+
+<h1>{L_ACP_FORUMPROMOTION_GENERAL}</h1>
+
+<!-- IF S_ERROR -->
+	<div class="errorbox">
+		<h3>{L_WARNING}</h3>
+		<p>{ERROR_MSG}</p>
+	</div>
+<!-- ENDIF -->
+
+
+<form id="acp_forumpromotion" name="acp_forumpromotion" method="post" action="{U_ACTION}">
+	<fieldset>
+		<legend>{L_ACP_FORUMPROMOTION_GENERAL}</legend>
+		<dl>
+			<dt><label for="crml_enabled">{L_CRML_ENABLE}</label></dt>
+			<dd>
+				<label><input type="radio" class="radio" id="crml_enabled" name="crml_enabled" value="1"<!-- IF S_ACP_CRML_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_ENABLED}</label>
+				<label><input type="radio" class="radio" id="crml_enabled" name="crml_enabled" value="0"<!-- IF not S_ACP_CRML_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_DISABLED}</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt><label for="crml_enable">{L_CRML_ENABLE_DECIMALS}</label>
+			<br /><span>{L_CRML_ENABLE_DECIMALS_EXPLAIN}</span></dt>
+			<dd>
+				<label><input type="radio" class="radio" id="crml_enable_decimals" name="crml_enable_decimals" value="1"<!-- IF S_ACP_CRML_ENABLE_DECIMALS --> checked="checked"<!-- ENDIF --> /> {L_ENABLED}</label>
+				<label><input type="radio" class="radio" id="crml_enable_decimals" name="crml_enable_decimals" value="0"<!-- IF not S_ACP_CRML_ENABLE_DECIMALS --> checked="checked"<!-- ENDIF --> /> {L_DISABLED}</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="crml_unit">{L_CRML_UNIT}</label>
+				<br /><span>{L_CRML_UNIT_EXPLAIN}</span>
+			</dt>
+			<dd>
+				<input id="crml_unit" type="text" size="10" maxlength="30" name="crml_unit_name" value="{S_ACP_CRML_UNIT_NAME}" />
+			</dd>
+		</dl>
+		{S_FORM_TOKEN}
+	</fieldset>
+	<fieldset>
+		<legend>{L_ACP_CASH_DEFAULTS}</legend>
+		<dl>
+			<dt>
+				<label for="crml_unit">{L_CRML_TOPIC_DEFAULT}</label>
+				<br /><span>{L_CRML_TOPIC_DEFAULT_EXPLAIN}</span>
+			</dt>
+			<dd>
+				<input id="crml_unit" type="text" size="10" maxlength="30" name="crml_topic_default" value="{S_ACP_CRML_TOPIC_DEFAULT}" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="crml_unit">{L_CRML_REPLY_DEFAULT}</label>
+				<br /><span>{L_CRML_REPLY_DEFAULT_EXPLAIN}</span>
+			</dt>
+			<dd>
+				<input id="crml_unit" type="text" size="10" maxlength="30" name="crml_reply_default" value="{S_ACP_CRML_REPLY_DEFAULT}" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="crml_unit">{L_CRML_LOGIN_INCREMENT}</label>
+				<br /><span>{L_CRML_LOGIN_INCREMENT_EXPLAIN}</span>
+			</dt>
+			<dd>
+				<input id="crml_unit" type="text" size="10" maxlength="30" name="crml_login_increment" value="{S_ACP_CRML_LOGIN_INCREMENT}" />
+			</dd>
+		</dl>
+	</fieldset>
+	<fieldset>
+		<legend>{L_ACP_DONATION_FEATURES}</legend>
+		<dl>
+			<dt>
+				<label for="crml_donations_enabled">{L_CRML_DONATIONS_ENABLED}</label>
+				<br /><span>{L_CRML_DONATIONS_ENABLED_EXPLAIN}</span>
+			</dt>
+			<dd>
+				<label><input type="radio" class="radio" id="crml_donations_enabled" name="crml_donations_enabled" value="1"<!-- IF S_ACP_CRML_DONATIONS_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_ENABLED}</label>
+				<label><input type="radio" class="radio" id="crml_donations_enableds" name="crml_donations_enabled" value="0"<!-- IF not S_ACP_CRML_DONATIONS_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_DISABLED}</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="crml_tips_enabled">{L_CRML_TIPS_ENABLED}</label>
+				<br /><span>{L_CRML_TIPS_ENABLED_EXPLAIN}</span>
+			</dt>
+			<dd>
+				<label><input type="radio" class="radio" id="crml_tips_enabled" name="crml_tips_enabled" value="1"<!-- IF S_ACP_CRML_TIPS_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_ENABLED}</label>
+				<label><input type="radio" class="radio" id="crml_tips_enableds" name="crml_tips_enabled" value="0"<!-- IF not S_ACP_CRML_TIPS_ENABLED --> checked="checked"<!-- ENDIF --> /> {L_DISABLED}</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="crml_unit">{L_CRML_TIP_DEFAULT}</label>
+				<br /><span>{L_CRML_TIP_DEFAULT_EXPLAIN}</span>
+			</dt>
+			<dd>
+				<input id="crml_unit" type="text" size="10" maxlength="30" name="crml_tip_default" value="{S_ACP_CRML_TIP_DEFAULT}" />
+			</dd>
+		</dl>
+	</fieldset>
+	<fieldset>
+		<legend>{L_ACP_SUBMIT_CHANGES}</legend>
+		<p class="submit-buttons">
+			<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />
+			&nbsp;<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+			{S_FORM_TOKEN}
+		</p>
+	</fieldset>
+</form>
+
+<!-- INCLUDE overall_footer.html -->

@@ -1,0 +1,67 @@
+<!-- INCLUDE mcp_header.html -->
+
+<form method="post">
+	<h2>{L_MCP_MANAGE_CASH}</h2>
+
+	<div class="panel">
+		<div class="inner">
+			<fieldset>
+				<dl>
+					<!-- IF S_ERROR -->
+						<dd class="error">
+							{ERROR_MSG}
+						</dd>
+					<!-- ENDIF -->
+					<dt><label for="username">{CRML_MANAGING_USERNAME}{L_COLON}</label>
+					<br /><em><small>{CRML_USER_CURRENT_STATUS}</small></em></dt>
+					<dd>
+						<select name="cash_change_type">
+							<option value="set" selected="selected">{L_MCP_CRML_SET_CASH}</option>
+							<option value="add">{L_MCP_CRML_ADD_CASH}</option>
+							<option value="subtract">{L_MCP_CRML_SUB_CASH}</option>
+						</select>
+					</dd>
+					<dd>
+						<input name="cash_value" id="cash_value" type="number" class="inputbox" required="required" value="{MCP_CRML_USER_CASH}" />
+					</dd>
+				</dl>
+			</fieldset>
+
+			{S_FORM_TOKEN}
+		</div>
+	</div>
+
+	<fieldset class="submit-buttons">
+		<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />
+		<input type="reset" value="{L_RESET}" name="reset" class="button2" />
+	</fieldset>
+
+	<div class="panel">
+		<h3>{L_MCP_CRML_CASH_LOGS}</h3>
+
+		<table class="table1 responsive">
+			<thead>
+				<tr>
+					<th class="name">{L_MCP_CRML_FROM}</th>
+					<th class="name">{L_MCP_CRML_TO}</th>
+					<th class="name">{L_MESSAGE}</th>
+					<th class="name">{CRML_UNIT}</th>
+					<th class="name">{L_TIME}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- BEGIN cashlogs -->
+					<tr class="<!-- IF cashlogs.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+						<td>{cashlogs.FROM_USERNAME}</td>
+						<td>{cashlogs.TO_USERNAME}</td>
+						<td>{cashlogs.MESSAGE}</td>
+						<td>{cashlogs.POINTS}</td>
+						<td>{cashlogs.TIME}</td>
+					</tr>
+				<!-- END cashlogs -->
+			</tbody>
+		</table>
+	</div>
+</form>
+
+<!-- INCLUDE mcp_footer.html -->

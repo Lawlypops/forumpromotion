@@ -1,0 +1,5 @@
+fp_forumpromotion_donate_controller:
+    pattern: /forumpromotion/donate/{uid}
+    defaults: { _controller: lawlypops.forumpromotion.donate.controller:donate }
+    requirements:
+        uid: \d+

@@ -1,0 +1,20 @@
+# To be included in services.yml.
+
+services:
+    lawlypops.forumpromotion.notification.type.donate:
+        class: lawlypops\forumpromotion\notification\type\donate
+        scope: prototype
+        arguments:
+            - @user_loader
+            - @dbal.conn
+            - @cache.driver
+            - @user
+            - @auth
+            - @config
+            - %core.root_path%
+            - %core.php_ext%
+            - %tables.notification_types%
+            - %tables.notifications%
+            - %tables.user_notifications%
+        tags:
+            - { name: notification.type }

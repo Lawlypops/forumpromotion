@@ -1,0 +1,43 @@
+<!-- INCLUDE mcp_header.html -->
+
+<h2>{L_UCP_CRML_CASH_LOGS}</h2>
+
+<div class="panel">
+	<div class="inner">
+		<h3>{L_UCP_CRML_CASH_LOGS}</h3>
+		
+		<table class="table1 responsive">
+			<thead>
+				<tr>
+					<th class="name">{L_MESSAGE}</th>
+					<th class="name">{L_UCP_FROM}</th>
+					<th class="name">{L_UCP_TO}</th>
+					<th class="name">{L_UCP_AMOUNT}</th>
+					<th class="name">{L_TIME}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- BEGIN logs -->
+					<tr class="<!-- IF logs.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+						<td>{logs.MESSAGE}</td>
+						<td>{logs.USERNAME_FROM}</td>
+						<td>{logs.USERNAME_TO}</td>
+						<td>{logs.POINTS} {CRML_UNIT}</td>
+						<td>{logs.TIME}</td>
+					</tr>
+				<!-- END logs -->
+			</tbody>
+		</table>
+
+		<div class="pagination">
+			<!-- IF TOTAL_LOGS -->{TOTAL_LOGS}<!-- ENDIF -->
+			<!-- IF .pagination -->
+				<!-- INCLUDE pagination.html -->
+			<!-- ELSE -->
+				{PAGE_NUMBER}
+			<!-- ENDIF -->
+		</div>
+	</div>
+</div>	
+
+<!-- INCLUDE mcp_footer.html -->

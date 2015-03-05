@@ -1,0 +1,27 @@
+<!-- IF S_FORUMPROMOTION -->
+	<dt>{CRML_UNIT}:</dt> 
+		<dd>
+			<span id="profile-cash">
+				<strong>{CRML_CASH}</strong>
+			</span> 
+			
+			<!-- IF (S_DONATIONS_ENABLED && S_ALLOW_DONATE) || S_ALLOW_MANAGE -->
+			[
+			
+				<!-- IF S_ALLOW_DONATE && S_DONATIONS_ENABLED -->
+					<a href="{U_DONATE}" title="{L_CRML_DONATE}">{L_CRML_DONATE}</a>  
+				<!-- ENDIF -->
+				
+				<!-- IF S_ALLOW_DONATE && S_DONATIONS_ENABLED && S_ALLOW_MANAGE -->
+				| 
+				<!-- ENDIF -->
+				
+				<!-- IF S_ALLOW_MANAGE -->
+					<a href="{U_MANAGE}"  title="{L_CRML_MANAGE}">{L_CRML_MANAGE}</a>
+				<!-- ENDIF --> 
+			
+			]
+			<!-- ENDIF -->
+		
+		</dd>
+<!-- ENDIF -->
