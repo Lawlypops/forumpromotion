@@ -19,7 +19,7 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-	'UCP_FORMPROMOTION'          => 'Forum Promotion',
+	'UCP_FORUMPROMOTION'          => 'Forum Promotion',
 	'UCP_CRML_CASH_LOGS'         => 'Transaction Logs',
 	'UCP_FROM'                   => 'From',
 	'UCP_TO'                     => 'To',
