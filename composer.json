@@ -23,8 +23,8 @@
 			"phpbb/phpbb": ">=3.1.0"
 		},
         "version-check": {
-            "host": "github.com/lawlypops/",
-            "directory": "forumpromotion",
+            "host": "lawlypops.github.io",
+            "directory": "/forumpromotion",
             "filename": "version.json"
         }
 	}
