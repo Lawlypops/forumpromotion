@@ -54,5 +54,6 @@ $lang = array_merge($lang, array(
 	'CRML_FORUM_REPLY_INCREMENT'             => 'Use global default new reply cash increment:',
 	'CRML_FORUM_REPLY_INCREMENT_EXPLAIN'     => 'Override the global default for cash earned on new reply.',
 	'CRML_FORUM_PER_WORD_INCREMENT'          => 'Use global default per word increment:',
-	'CRML_FORUM_PER_WORD_INCREMENT_EXPLAIN'  => 'Override the default value for cash earned for each word of a post. This is added on top of the values above.'
+	'CRML_FORUM_PER_WORD_INCREMENT_EXPLAIN'  => 'Override the default value for cash earned for each word of a post. This is added on top of the values above.',
+	'UCP_FORUMPROMOTION'                => 'Forum Promotion'
 ));
